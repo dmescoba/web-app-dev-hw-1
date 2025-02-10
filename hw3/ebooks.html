@@ -12,10 +12,10 @@
     <p>Calculate the number of trees saved from the use of eBooks verses traditional books.</p>
     
     <p>How many pages does the book have?</p>
-    <input id="ebooks">
+    <input id="pagesPerBook">
     <br>
     <p>How many copies of the book would you need?</p>
-    <input id="pagesPerBook">
+    <input id="copiesOfBook">
     <br>
     <button onclick="calculateTreesSaved()">Calculate Trees Saved</button>
     <p id="result"></p>
@@ -25,10 +25,10 @@
     function calculateTreesSaved() {
         // Average estimate: 1 tree produces about 8,333 sheets of paper.
         const sheetsPerTree = 8333;
-        const ebooks = parseInt(document.getElementById('ebooks').value);
         const pagesPerBook = parseInt(document.getElementById('pagesPerBook').value);
+        const copiesOfBook = parseInt(document.getElementById('copiesOfBook').value);
 
-        const sheetsSaved = ebooks * pagesPerBook;
+        const sheetsSaved = pagesPerBook * copiesOfBook;
         const treesSaved = (sheetsSaved / sheetsPerTree).toFixed(2);
 
         document.getElementById('result').textContent = `You would save ${treesSaved} tree(s)!`;
